@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: post
-          image: post-app-service
+          image: dev19med/post-service
           env:
             - name: DATA_BASE_HOST
               value: data-base-service
@@ -43,7 +43,7 @@ spec:
 
 ---
 apiVersion: v1
-kind: Servicegpg
+kind: Service
 metadata:
   name: data-base-service-node-port
 spec:
