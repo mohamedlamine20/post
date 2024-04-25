@@ -31,7 +31,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request)  {
         authenticationManager.authenticate(
-               new UsernamePasswordAuthenticationToken("test@test.com","password"));
+               new UsernamePasswordAuthenticationToken(request.email(),request.password()));
         User user = userRepository.findByEmail(request.email())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid email or password"));
         String jwt = jwtService.generateToken(user.getEmail());

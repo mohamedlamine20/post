@@ -52,6 +52,7 @@ spec:
     app: post
   ports:
     - name: post-app-node-port
+      nodePort: 32050
       port: 8080
       protocol: TCP
       targetPort: 8080
